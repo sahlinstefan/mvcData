@@ -1,0 +1,31 @@
+﻿@model mvcData.Models.StudentCourse
+
+
+<h2>Assignment / Students Details</h2>
+
+<div>
+    <h4>StudentCourse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Courses.Course)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Courses.Course)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Students.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Students.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudCourse_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

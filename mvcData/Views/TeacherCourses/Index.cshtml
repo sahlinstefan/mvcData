@@ -1,0 +1,36 @@
+﻿@model IEnumerable<mvcData.Models.TeacherCourse>
+
+
+<h2>Teachers and Courses</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Courses.Course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teachers.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Courses.Course)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Teachers.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TeacherCourse_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TeacherCourse_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TeacherCourse_Id })
+        </td>
+    </tr>
+}
+
+</table>
